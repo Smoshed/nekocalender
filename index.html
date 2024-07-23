@@ -1,5 +1,42 @@
-<meta http-equiv="refresh" content="3; url=https://calendar.google.com/calendar/u/0/embed?src=9864854f54849878725aeb5aae053b3d2b7c25f05dd322e45923f95f6a5b51d4@group.calendar.google.com&ctz=America/New_York" />
-<p style="text-align:center;">&nbsp;</p>
-<p style="text-align:center;">&nbsp;</p>
-<h2 style="text-align:center;">Loading Calender…</h2>
-<p style="text-align:center;">Please be patient.<br>This will take a couple seconds.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Calendar...</title>
+    <style>
+        #calendar {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+        #loading-message {
+            text-align: center;
+            margin-top: 20%;
+            font-size: 1.5em; /* Vergroot de tekst */
+        }
+        #loading-message h2 {
+            font-size: 2em; /* Vergroot de koptekst */
+        }
+        #loading-message p {
+            font-size: 1.2em; /* Vergroot de paragraaftekst */
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-message">
+        <h2>Loading Calendar…</h2>
+        <p>Please be patient.<br>This will take a couple seconds.</p>
+    </div>
+    <iframe id="calendar" src="https://calendar.google.com/calendar/u/0/embed?src=9864854f54849878725aeb5aae053b3d2b7c25f05dd322e45923f95f6a5b51d4@group.calendar.google.com&ctz=America/New_York"></iframe>
+
+    <script>
+        const iframe = document.getElementById('calendar');
+        iframe.onload = function() {
+            document.getElementById('loading-message').style.display = 'none';
+            iframe.style.display = 'block';
+        };
+    </script>
+</body>
+</html>
