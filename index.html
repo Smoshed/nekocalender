@@ -19,22 +19,19 @@
             text-align: center;
             margin-top: 20%;
         }
-        #loading-message h2 {
-            font-size: 4em !important; /* Grote koptekst met !important */
-        }
-        #loading-message p {
-            font-size: 3em !important; /* Grote paragraaftekst met !important */
-        }
     </style>
 </head>
 <body>
     <div id="loading-message">
-        <h2>Loading Calendar…</h2>
-        <p>Please be patient.<br>This will take a couple seconds.</p>
+        <h2 id="loading-title">Loading Calendar…</h2>
+        <p id="loading-text">Please be patient.<br>This will take a couple seconds.</p>
     </div>
     <iframe id="calendar" src="https://calendar.google.com/calendar/u/0/embed?src=9864854f54849878725aeb5aae053b3d2b7c25f05dd322e45923f95f6a5b51d4@group.calendar.google.com&ctz=America/New_York"></iframe>
 
     <script>
+        document.getElementById('loading-title').style.fontSize = '4em';
+        document.getElementById('loading-text').style.fontSize = '3em';
+
         const iframe = document.getElementById('calendar');
         iframe.onload = function() {
             document.getElementById('loading-message').style.display = 'none';
